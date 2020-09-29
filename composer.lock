@@ -1063,6 +1063,7 @@
             "time": "2020-08-11T19:28:08+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "laravel/ui",
             "version": "v3.0.0",
             "source": {
@@ -1117,6 +1118,8 @@
             "time": "2020-09-11T15:34:08+00:00"
         },
         {
+=======
+>>>>>>> 9997175... Initial commit
             "name": "league/commonmark",
             "version": "1.5.5",
             "source": {
