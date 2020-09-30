@@ -13,7 +13,7 @@ class TokenController extends Controller
      */
     public function index()
     {
-        return view('layouts.check_token');
+        return view('interface.check_token');
     }
 
     /**
@@ -34,7 +34,7 @@ class TokenController extends Controller
      */
     public function store(Request $request)
     {
-        return view('layouts.show_token');
+        return view('interface.show_token');
     }
 
     /**
