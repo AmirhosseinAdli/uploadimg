@@ -37333,6 +37333,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 __webpack_require__(/*! /var/www/img-share/resources/js/app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! /var/www/img-share/resources/sass/app.scss */"./resources/sass/app.scss");
+>>>>>>> b4503e493abe6e787e43cd56ae37796ddf20a17b
 __webpack_require__(/*! C:\xampp\htdocs\imagesharingproject\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\xampp\htdocs\imagesharingproject\resources\sass\app.scss */"./resources/sass/app.scss");
 
