@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -29,9 +30,9 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
-    protected function authenticated(Request $request, $user)
+    protected function authenticated(Request $request, User $user)
     {
-//        $this->redirectTo = route("{$user->role}.home" );
+        $this->redirectTo = $user->hasRole('admin') ? route("admin.home" ) : route("panel.home" ) ;
     }
 
     /**

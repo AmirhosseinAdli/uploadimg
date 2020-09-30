@@ -1,1 +1,1 @@
-<b>Dashboard</b>
+<b>Panel Dashboard</b>
