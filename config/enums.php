@@ -2,12 +2,12 @@
 
 return [
 
-    'history' => [
-        'title' => [
-            0 => 'visited',
-            1 => 'expired',
-            2 => 'try_to_visit_expired',
-            3 => 'deleted',
+    'histories' => [
+        'operations' => [
+            'visited'              => 'visited',
+            'expired'              => 'expired',
+            'try_to_visit_expired' => 'try_to_visit_expired',
+            'deleted'              => 'deleted',
         ],
     ],
 ];

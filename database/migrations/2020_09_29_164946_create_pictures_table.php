@@ -21,9 +21,9 @@ class CreatePicturesTable extends Migration
             $table->string('picture_deactive')->nullable()->default(NULL);
             $table->enum('state',['deactive','active'])->default('deactive');
             $table->string('slug',20)->unique();
-            $table->date('expire_time')->nullable()->default(NULL)->comment('Null means unlimited');
+            $table->timestamp('expire_time')->nullable()->default(NULL)->comment('Null means unlimited');
             $table->integer('max_count')->nullable()->default(NULL)->comment('Null means unlimited');
-            $table->string('token')->nullable()->default(NULL);
+            $table->string('token',100)->nullable()->default(NULL);
             $table->timestamps();
         });
     }

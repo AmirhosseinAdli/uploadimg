@@ -17,9 +17,10 @@ class CreateHistoriesTable extends Migration
             $table->id();
             $table->foreignId('picture_id');
             $table->foreign('picture_id')->references('id')->on('pictures')->cascadeOnDelete();
-            $table->ipAddress('visited_ip')->nullable()->default(NULL);
-            #TODO: Change this to enum, after brainstorming
-            $table->string('title',20)->comment('Operation Title');
+            $table->ipAddress('visitor_ip')->nullable()->default(NULL);
+            #TODO: Change this to enum, after config complement
+//            $table->enum('operation', array_keys(config('enums.histories.operations')))->comment('Operation Title');
+            $table->string('operation', 20)->comment('Operation Title');
             $table->timestamp('created_at');
         });
     }
