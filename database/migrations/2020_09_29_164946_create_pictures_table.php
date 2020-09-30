@@ -17,14 +17,13 @@ class CreatePicturesTable extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('picture');
-            $table->string('default_picture');
-            $table->enum('state',['deactivate','active']);
-            $table->string('link')->unique();
-            $table->date('expire_time')->nullable()->default(NULL);
-            $table->integer('expire_count')->nullable()->default(NULL);
-            $table->string('token');
-            $table->integer('count');
+            $table->string('picture_main');
+            $table->string('picture_deactive')->nullable()->default(NULL);
+            $table->enum('state',['deactive','active'])->default('deactive');
+            $table->string('slug',20)->unique();
+            $table->date('expire_time')->nullable()->default(NULL)->comment('Null means unlimited');
+            $table->integer('max_count')->nullable()->default(NULL)->comment('Null means unlimited');
+            $table->string('token')->nullable()->default(NULL);
             $table->timestamps();
         });
     }
