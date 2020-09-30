@@ -26,3 +26,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/token','TokenController');
+
+Route::get('test',function (){
+    return view('panel.admin-edit-img');
+});
