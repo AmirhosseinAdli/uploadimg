@@ -1,7 +1,8 @@
-    <?php
+<?php
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/validate',[ValidateController::class,'index']);
+Auth::routes();
 
-Route::get('/view',[ViewController::class,'index']);
+Route::get('/validate','ValidateController@index');
+Route::get('/view','ViewController@index');

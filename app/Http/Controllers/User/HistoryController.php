@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
-use App\Models\Picture;
+use App\Http\Controllers\Controller;
+use App\Models\History;
 use Illuminate\Http\Request;
 
-class PictureController extends Controller
+class HistoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class PictureController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Picture  $picture
+     * @param  \App\Models\History  $history
      * @return \Illuminate\Http\Response
      */
-    public function show(Picture $picture)
+    public function show(History $history)
     {
         //
     }
@@ -52,10 +53,10 @@ class PictureController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Picture  $picture
+     * @param  \App\Models\History  $history
      * @return \Illuminate\Http\Response
      */
-    public function edit(Picture $picture)
+    public function edit(History $history)
     {
         //
     }
@@ -64,10 +65,10 @@ class PictureController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Picture  $picture
+     * @param  \App\Models\History  $history
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Picture $picture)
+    public function update(Request $request, History $history)
     {
         //
     }
@@ -75,10 +76,10 @@ class PictureController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Picture  $picture
+     * @param  \App\Models\History  $history
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Picture $picture)
+    public function destroy(History $history)
     {
         //
     }

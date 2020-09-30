@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
+use App\Models\Picture;
 use Illuminate\Http\Request;
 
-class TokenController extends Controller
+class PictureController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,7 @@ class TokenController extends Controller
      */
     public function index()
     {
-        return view('interface.check_token');
+        //
     }
 
     /**
@@ -34,16 +36,16 @@ class TokenController extends Controller
      */
     public function store(Request $request)
     {
-        return view('interface.show_token');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Picture  $picture
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Picture $picture)
     {
         //
     }
@@ -51,10 +53,10 @@ class TokenController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Picture  $picture
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Picture $picture)
     {
         //
     }
@@ -63,10 +65,10 @@ class TokenController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Picture  $picture
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Picture $picture)
     {
         //
     }
@@ -74,10 +76,10 @@ class TokenController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Picture  $picture
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Picture $picture)
     {
         //
     }
