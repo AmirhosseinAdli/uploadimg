@@ -49,7 +49,7 @@
         <div class="row">
             <div class="col-md-12">
                 <form action="">
-                    <button type="submit" class="col-lg-6-12 btn btn-primary">GENRATE LINK</button>
+                    <button type="submit" class="col-lg-6-12 btn btn-primary">GENERATE LINK</button>
                 </form>
             </div>
         </div>
