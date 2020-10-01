@@ -15,6 +15,7 @@ class ViewController extends Controller
 
     }
 
+    //Checks token validation
     public function check(){
 
     }
