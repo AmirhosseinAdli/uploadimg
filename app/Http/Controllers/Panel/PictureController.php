@@ -15,6 +15,7 @@ class PictureController extends Controller
      */
     public function index()
     {
+        auth()->id();
         //
     }
 
