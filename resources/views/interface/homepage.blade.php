@@ -8,6 +8,9 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
         <!-- Styles -->
         <style>
@@ -69,10 +72,15 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            footer {
+                background-color: #f2f2f2;
+                padding: 25px;
+            }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+
+        <div class="navbar-nav">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -91,17 +99,39 @@
                 </div>
             @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Image Sharing System
-                    <span class="headline m-b-md">v1.0</span>
-                    <div class="desc">professional sharing system for your photos</div>
+
+               <div class="jumbotron" style="margin-top: 60px">
+                        <div class="container text-center" style="height: 400px">
+
+                            <h1><b>Welcom to image sharing</b></h1><br>
+                            <p style="font-size: large">Upload and share your images </p><br><br><br><br>
+
+                            <button type="button" class="btn btn-info"style="width: 500px;height: 100px">
+                                <a href="" style="color: white;text-decoration: none">Start Upload</a>
+                            </button>
+
+                        </div>
+                    </div>
+
+
+                    <footer class="container-fluid text-center">
+                        <div class="container">
+                            <div class="row">
+
+                                <div class="col-sm">
+                                    All users in site :
+                                </div>
+                                <div class="col-sm">
+                                    All images in site :
+                                </div>
+                                <div class="col-sm">
+                                    Visitores per day :
+                                </div>
+
+                            </div>
+                        </div>
+                    </footer>
                 </div>
 
-                <div class="links">
-                    Follow us at : <a href="https://github.com/">Github <i class="fa fa-github"></i></a>
-                </div>
-            </div>
-        </div>
-    </body>
+            </body>
 </html>
