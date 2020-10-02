@@ -104,8 +104,8 @@
         <div class="jumbotron" style="margin-top: 60px">
             <div class="container text-center" style="height: 400px">
 
-                <h1><b>Welcome to image sharing</b></h1><br>
-                <p style="font-size: large">Upload and share your images </p><br><br><br><br>
+                <br><br><br>    <h1><b>Welcome to image sharing</b></h1><br>
+                <p style="font-size: large">Upload and share your images </p><br><br>
 
                 <button type="button" class="btn btn-info" style="width: 500px;height: 100px">
                     <a href="" style="color: white;text-decoration: none">Start Upload</a>
