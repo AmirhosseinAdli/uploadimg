@@ -5,9 +5,6 @@
 
                 <h1>Edit Image</h1><br><br><br>
 
-
-
-
         <div class="container text-center">
 
 
@@ -23,9 +20,6 @@
                     <form action="">
                         change title:
                         <input type="text"><br><br><br><br><br>
-
-
-
 
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Delete img</button> <br><br><br><br><br>
 
