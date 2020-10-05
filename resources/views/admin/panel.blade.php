@@ -51,18 +51,51 @@
                 <li class="menu-item">
                     <a href="#" class="menu-link">
                         <i class="menu-icon far fa-compass"></i>
-                        <span class="menu-label">Explore</span>
+                        <span class="menu-label">Dashboard</span>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="#" class="menu-link">
                         <i class="menu-icon far fa-user-graduate"></i>
-                        <span class="menu-label">Courses</span>
+                        <span class="menu-label">Users</span>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="#" class="menu-link">
-                        <i class="menu-icon far fa-play"></i> <span class="menu-label">Videos</span></a></li> <li class="site-menu-item"><a href="/tool" target="_blank" class="menu-link"><i class="menu-icon far fa-tools"></i> <span class="site-menu-title">Tools</span></a></li> <li class="menu-item"><a href="/topics" class="menu-link"><i class="menu-icon far fa-layer-group"></i> <span class="menu-label">Topics</span></a></li> <li class="menu-item"><a href="http://on.morioh.net/96d5d36367" target="_blank" class="menu-link"><i class="menu-icon far fa-drafting-compass"></i> <span class="menu-label">Templates</span></a></li> <li class="menu-item"><a href="http://on.morioh.net/f294f33d0d" target="_blank" class="menu-link"><i class="menu-icon far fa-tshirt"></i> <span class="menu-label">T-shirts</span></a></li></ul></div><div class="scrollbar-track scrollbar-track-x" style="display: none;"><div class="scrollbar-thumb scrollbar-thumb-x" style="width: 120px; transform: translate3d(0px, 0px, 0px);"></div></div><div class="scrollbar-track scrollbar-track-y" style="display: none;"><div class="scrollbar-thumb scrollbar-thumb-y" style="height: 829px; transform: translate3d(0px, 0px, 0px);"></div></div></div>
+                        <i class="menu-icon far fa-play"></i>
+                        <span class="menu-label">picture lists</span>
+                    </a>
+                </li>
+                <li class="site-menu-item">
+                    <a href="/tool" target="_blank" class="menu-link">
+                        <i class="menu-icon far fa-tools">
+
+                        </i>
+                        <span class="site-menu-title">History</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="/topics" class="menu-link">
+                        <i class="menu-icon far fa-layer-group">
+
+                        </i>
+                        <span class="menu-label">Log out</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="scrollbar-track scrollbar-track-x" style="display: none;">
+            <div class="scrollbar-thumb scrollbar-thumb-x" style="width: 120px; transform: translate3d(0px, 0px, 0px);">
+
+            </div>
+        </div>
+        <div class="scrollbar-track scrollbar-track-y" style="display: none;">
+            <div class="scrollbar-thumb scrollbar-thumb-y" style="height: 829px; transform: translate3d(0px, 0px, 0px);">
+
+            </div>
+        </div>
+    </div>
 
 
 
