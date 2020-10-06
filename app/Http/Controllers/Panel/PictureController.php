@@ -10,14 +10,9 @@ use Illuminate\Support\Str;
 
 class PictureController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        auth()->id();
         //
     }
 
@@ -30,7 +25,7 @@ class PictureController extends Controller
     {
         $token = Str::random(20);
         while (Picture::firstWhere('slug',$slug = crc32(Carbon::now()->timestamp)) != null);
-        return view('panel.pictures.test',compact('token','slug'));
+        return view('panel.pictures.create',compact('token','slug'));
     }
 
     /**
@@ -48,29 +43,15 @@ class PictureController extends Controller
             $request->file('picture_deactive')->storeAs('picture_deactive',$picture_deactive);
         }
 
-//        Picture::create($request->all());
-        if ($request['picture_deactive'] != null){
-            Picture::create([
-                'user_id' => 1,
-                'slug' => $request['slug'],
-                'picture_main' => 'picture_main/' . $picture_main,
-                'picture_deactive' => 'picture_deactive/' . $picture_deactive,
-                'created_at' => $request['created_at'],
-                'updated_at' => $request['updated_at'],
-            ]);
-            return redirect()->route('panel.pictures.index');
-        }
-        else{
-            Picture::create([
-                'user_id' => 1,
-                'slug' => $request['slug'],
-                'picture_main' => 'picture_main/' . $picture_main,
-                'created_at' => $request['created_at'],
-                'updated_at' => $request['updated_at'],
-            ]);
-            return redirect()->route('panel.pictures.index');
+        $picture = $request->all();
+        $picture['picture_main'] = 'picture_main/' . $picture_main;
+        if ($request['picture_deactive'] != null) {
+            $picture['picture_deactive'] = 'picture_deactive/' . $picture_deactive;
         }
 
+
+            Picture::create($picture);
+            return redirect()->route('panel.pictures.index');
     }
 
     /**
@@ -81,7 +62,7 @@ class PictureController extends Controller
      */
     public function show(Picture $picture)
     {
-        //
+
     }
 
     /**
@@ -113,28 +94,15 @@ class PictureController extends Controller
             $request->file('picture_deactive')->storeAs('picture_deactive',$picture_deactive);
         }
 
-//        Picture::create($request->all());
-        if ($request['picture_deactive'] != null){
-            Picture::update([
-                'user_id' => 1,
-                'slug' => $request['slug'],
-                'picture_main' => 'picture_main/' . $picture_main,
-                'picture_deactive' => 'picture_deactive/' . $picture_deactive,
-                'created_at' => $request['created_at'],
-                'updated_at' => $request['updated_at'],
-            ]);
-            return redirect()->route('panel.pictures.index');
+        $picture = $request->all();
+        $picture['picture_main'] = 'picture_main/' . $picture_main;
+        if ($request['picture_deactive'] != null) {
+            $picture['picture_deactive'] = 'picture_deactive/' . $picture_deactive;
         }
-        else{
-            Picture::update([
-                'user_id' => 1,
-                'slug' => $request['slug'],
-                'picture_main' => 'picture_main/' . $picture_main,
-                'created_at' => $request['created_at'],
-                'updated_at' => $request['updated_at'],
-            ]);
-            return redirect()->route('panel.pictures.index');
-        }
+
+
+        Picture::update($picture);
+        return redirect()->route('panel.pictures.index');
     }
 
     /**
@@ -145,7 +113,7 @@ class PictureController extends Controller
      */
     public function destroy(Picture $picture)
     {
-        $picture->delete();
+        $picture->softDelete();
         return redirect()->route('panel.pictures.index');
     }
 }
