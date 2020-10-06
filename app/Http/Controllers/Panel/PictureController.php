@@ -47,6 +47,8 @@ class PictureController extends Controller
     }
 
 
+
+
     public function show(Picture $picture)
     {
             dd($picture->expire_time);
