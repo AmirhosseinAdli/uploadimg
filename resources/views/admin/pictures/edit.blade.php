@@ -5,12 +5,12 @@
         <div class="row">
             <div class="col-md-5">
                 <h2>Upload New Picture</h2>
-                <form action="">
+                <form action="{{route('admin.pictures.update')}}">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Expire Date</span>
                         </div>
-                        <input type="date" name="data" class="form-control" aria-label="Expire Date" aria-describedby="inputGroup-sizing-lg">
+                        <input type="date" name="date" class="form-control" aria-label="Expire Date" aria-describedby="inputGroup-sizing-lg">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -22,13 +22,13 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Token</span>
                         </div>
-                        <input type="text" name="token" class="form-control" aria-label="Token" aria-describedby="inputGroup-sizing-sm" disabled placeholder="">
+                        <input type="text" name="token" value="{{$token}}" class="form-control" aria-label="Token" aria-describedby="inputGroup-sizing-sm" disabled placeholder="">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Slug</span>
                         </div>
-                        <input type="text" name="slug" class="form-control" aria-label="Slug" aria-describedby="inputGroup-sizing-sm" disabled placeholder="">
+                        <input type="text" name="slug" value="{{$slug}}" class="form-control" aria-label="Slug" aria-describedby="inputGroup-sizing-sm" disabled placeholder="">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">

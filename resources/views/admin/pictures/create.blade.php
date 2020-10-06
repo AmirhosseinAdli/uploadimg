@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-md-5">
           <h2>Edit Picture</h2>
-            <form action="">
+            <form action="{{route('admin.pictures.store')}}" >
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroup-sizing-sm">Expire Date</span>
@@ -22,13 +22,13 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroup-sizing-sm">Token</span>
                 </div>
-                <input type="text" name="token" class="form-control" aria-label="Token" aria-describedby="inputGroup-sizing-sm" disabled placeholder="token will generated automaticlly">
+                <input type="text" name="token" value="{{$token}}" class="form-control" aria-label="Token" aria-describedby="inputGroup-sizing-sm" disabled placeholder="token will generated automaticlly">
               </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroup-sizing-sm">Slug</span>
                 </div>
-                <input type="text" name="slug" class="form-control" aria-label="Slug" aria-describedby="inputGroup-sizing-sm" disabled placeholder="domain will generated automaticlly">
+                <input type="text" name="slug" value="{{$slug}}" class="form-control" aria-label="Slug" aria-describedby="inputGroup-sizing-sm" disabled placeholder="domain will generated automaticlly">
               </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
