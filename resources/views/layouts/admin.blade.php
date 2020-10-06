@@ -78,8 +78,42 @@
             </div>
         </nav>
 
+
+
         <main class="py-4">
-            @yield('content')
+
+
+            <div class="container-fluid text-center" style="margin-top: 70px">
+                <div class="row content">
+                    <div class="col-sm-2 sidenav" style="margin-top:90px">
+                        <h1>Admin-panel</h1>
+                        <p style="margin-top: 50px"><a href="#">Dashboard</a></p>
+                        <p><a href="#">Users</a></p>
+                        <p><a href="#">Pictures list</a></p>
+                        <p><a href="#">History</a></p>
+                        <p><a href="#" style="color: red">Logout</a></p>
+                    </div>
+                    <div class="col-sm-8 text-left">
+
+                        <h1 style="text-align: center">part name </h1>
+
+
+
+
+                        <div class="container emp-profile">
+
+                            <div class="row">
+
+                                @yield('content')
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 </body>
