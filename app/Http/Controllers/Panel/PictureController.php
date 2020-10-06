@@ -85,8 +85,7 @@ class PictureController extends Controller
         $picture->slug=$request->slug;
 
         if (isset($request->picture_main)){
-            $pic=$request->picture_main->move(public_path('storage/images'),
-                $request->picture_main->getClientOriginalName());
+            $pic=$request->picture_main->move(public_path('storage/images'), $request->picture_main->getClientOriginalName());
             $picture->picture_main = explode('public',$pic)[1];
         }
 

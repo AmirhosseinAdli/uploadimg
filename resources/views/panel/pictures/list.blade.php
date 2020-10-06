@@ -47,6 +47,6 @@
         </tbody>
     </table>
 
-{{--    <img style="width: 50px;height: 50px" src="{{asset($picture->picture_main)}}" alt="">--}}
-{{--    <img style="width: 50px;height: 50px" src="{{asset($picture->picture_deactive)}}" alt="">--}}
+{{--    <img style="width: 50px;height: 50px" src="{{asset($picture->picture_main)}}" >--}}
+{{--    <img style="width: 50px;height: 50px" src="{{asset($picture->picture_deactive)}}" >--}}
 @endsection
