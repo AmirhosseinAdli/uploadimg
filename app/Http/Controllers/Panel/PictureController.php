@@ -10,15 +10,11 @@ use Illuminate\Support\Str;
 
 class PictureController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        auth()->id();
-        //
+        $pictures = Picture::all();
+        return view('panel.pictures.list',compact('pictures'));
     }
 
     /**
@@ -73,23 +69,12 @@ class PictureController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Picture  $picture
-     * @return \Illuminate\Http\Response
-     */
     public function show(Picture $picture)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Picture  $picture
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
-     */
+
     public function edit(Picture $picture)
     {
         $token = Str::random(20);
@@ -97,13 +82,7 @@ class PictureController extends Controller
         return view('',compact('token','slug'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Picture  $picture
-     * @return \Illuminate\Http\RedirectResponse
-     */
+
     public function update(Request $request, Picture $picture)
     {
         $picture_main = Carbon::now()->timestamp. '.' . $request->file('picture_main')->getClientOriginalExtension();
