@@ -24,20 +24,20 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Token</span>
                         </div>
-                        <input type="text" name="token" class="form-control" aria-label="Token" aria-describedby="inputGroup-sizing-sm" disabled placeholder="">
+                        <input type="text" name="token" class="form-control" aria-label="Token" aria-describedby="inputGroup-sizing-sm" >
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Slug</span>
                         </div>
-                        <input type="text" name="slug" class="form-control" aria-label="Slug" aria-describedby="inputGroup-sizing-sm" disabled placeholder="">
+                        <input type="text" name="slug" class="form-control" aria-label="Slug" aria-describedby="inputGroup-sizing-sm" >
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Upload Picture</span>
                         </div>
                         <div class="custom-file">
-                            <input type="file" name="picture_deactive" class="custom-file-input" id="inputGroupFile01">
+                            <input type="file" name="picture_main " >
                             <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                         </div>
                     </div>
@@ -46,12 +46,12 @@
                             <span class="input-group-text">Upload Holder Picture</span>
                         </div>
                         <div class="custom-file">
-                            <input type="file" name="picture_main" class="custom-file-input" id="inputGroupFile01">
+                            <input type="file" name="picture_deactive" >
                             <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                         </div>
                     </div>
+{{--                    <input type="file" name="picture_deactive">--}}
                     <button class="btn btn-primary w-25" type="submit">Submit</button>
-                    <button class="btn btn-dark w-50" type="submit">Delete Permanently</button>
                 </form>
             </div>
             <div class="col-md-3 offset-md-4">
