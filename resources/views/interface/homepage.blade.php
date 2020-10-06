@@ -90,7 +90,7 @@
                 @else
                     <a href="{{ route('panel.home') }}">User Panel</a>
                     @endrole
-                    @else
+                   
                         <a href="{{ route('login') }}">Login</a>
 
                         @if (Route::has('register'))
