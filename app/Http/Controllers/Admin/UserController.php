@@ -13,7 +13,8 @@ class UserController extends Controller
 
     public function index()
     {
-
+        $users = User::all();
+        return view('admin.users.list',compact('users'));
     }
 
 
@@ -37,9 +38,9 @@ class UserController extends Controller
     }
 
 
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        return view('admin.users.edit',['user'=>$user]);
     }
 
 
@@ -49,8 +50,9 @@ class UserController extends Controller
     }
 
 
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect()->route('admin.users.index');
     }
 }
