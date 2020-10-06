@@ -11,30 +11,12 @@
 @push('style')
     <style>
 
-        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-        .row.content {height: 450px}
-
-        /* Set gray background color and 100% height */
-        .sidenav {
-            padding-top: 20px;
-            background-color: #f1f1f1;
-            height: 100%;
-        }
-
-        /* Set black background color, white text and some padding */
-        footer {
-            background-color: #555;
-            color: white;
-            padding: 15px;
-        }
-
-        /* On small screens, set height to 'auto' for sidenav and grid */
-        @media screen and (max-width: 767px) {
-            .sidenav {
-                height: auto;
-                padding: 15px;
-            }
-            .row.content {height:auto;}
+        .emp-profile{
+            padding: 3%;
+            margin-top: 3%;
+            margin-bottom: 3%;
+            border-radius: 0.5rem;
+            background: #fff;
         }
     </style>
 @endpush
@@ -45,57 +27,37 @@
 
 
 
-    <div class="menubar-body" data-scrollbar="true" tabindex="-1" style="overflow: hidden; outline: none;">
-        <div class="scroll-content">
-            <ul class="menu accordion">
-                <li class="menu-item">
-                    <a href="#" class="menu-link">
-                        <i class="menu-icon far fa-compass"></i>
-                        <span class="menu-label">Dashboard</span>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="#" class="menu-link">
-                        <i class="menu-icon far fa-user-graduate"></i>
-                        <span class="menu-label">Users</span>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="#" class="menu-link">
-                        <i class="menu-icon far fa-play"></i>
-                        <span class="menu-label">picture lists</span>
-                    </a>
-                </li>
-                <li class="site-menu-item">
-                    <a href="/tool" target="_blank" class="menu-link">
-                        <i class="menu-icon far fa-tools">
-
-                        </i>
-                        <span class="site-menu-title">History</span>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="/topics" class="menu-link">
-                        <i class="menu-icon far fa-layer-group">
-
-                        </i>
-                        <span class="menu-label">Log out</span>
-                    </a>
-                </li>
-
-            </ul>
-        </div>
-        <div class="scrollbar-track scrollbar-track-x" style="display: none;">
-            <div class="scrollbar-thumb scrollbar-thumb-x" style="width: 120px; transform: translate3d(0px, 0px, 0px);">
-
+    <div class="container-fluid text-center" style="margin-top: 70px">
+        <div class="row content">
+            <div class="col-sm-2 sidenav" style="margin-top:90px">
+                <h1>Admin-panel</h1>
+                <p style="margin-top: 50px"><a href="#">Dashboard</a></p>
+                <p><a href="#">Users</a></p>
+                <p><a href="#">Pictures list</a></p>
+                <p><a href="#">History</a></p>
+                <p><a href="#" style="color: red">Logout</a></p>
             </div>
-        </div>
-        <div class="scrollbar-track scrollbar-track-y" style="display: none;">
-            <div class="scrollbar-thumb scrollbar-thumb-y" style="height: 829px; transform: translate3d(0px, 0px, 0px);">
+            <div class="col-sm-8 text-left">
+                <h1 style="text-align: center">part name </h1>
+
+
+
+
+                <div class="container emp-profile">
+
+                        <div class="row">
+
+                            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>    dakhele in tag safe morede nazar namayesh dade mishavad
+
+                        </div>
+
+                </div>
+
 
             </div>
         </div>
     </div>
+
 
 
 
