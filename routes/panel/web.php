@@ -1,11 +1,12 @@
-    <?php
+<?php
 
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\PictureController;
 
-Route::resource('/admin',AdminController::class);
+Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/user',UserController::class);
+Route::resource('/pictures', 'PictureController');
+Route::resource('/histories', 'HistoryController');
+
 
 
 
