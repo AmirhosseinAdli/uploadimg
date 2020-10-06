@@ -66,7 +66,7 @@
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Register') }}
                                     </button>
-                                    <a href="{{ route('admin.panel') }}">Cancel</a>
+                                    <a href="#">Cancel</a>
                                 </div>
                             </div>
                         </form>
