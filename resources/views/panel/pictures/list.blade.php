@@ -32,11 +32,11 @@
                 <td>{{$picture->updated_at}}</td>
                 <td>{{$picture->expire_time}}</td>
                 <td><div class="container d-inline-flex"><a href="{{route('panel.pictures.edit',[$picture])}}" class="btn btn-primary btn-sm active"  >Edit</a>
+                         <a href="{{#}}" class="btn btn-success btn-sm active"  >Expire</a>
                         <form action="{{route('panel.pictures.destroy',[$picture])}}" method="post">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" href="{{route('panel.pictures.destroy',[$picture])}}" class="btn btn-danger btn-sm active"   > History</button >
-                            <button type="submit" href="{{route('panel.pictures.destroy',[$picture])}}" class="btn btn-success btn-sm active"   > Expire</button >
+                            <button type="submit"  class="btn btn-danger btn-sm active"   > Delete</button >
                         </form>
                     </div>
 

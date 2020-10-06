@@ -73,9 +73,9 @@ class PictureController extends Controller
      */
     public function edit(Picture $picture)
     {
-        $token = Str::random(20);
-        $slug = crc32(Carbon::now()->timestamp);
-        return view('',compact('token','slug'));
+
+
+        return view('panel.pictures.edit',compact('picture'));
     }
 
     /**
@@ -87,6 +87,7 @@ class PictureController extends Controller
      */
     public function update(Request $request, Picture $picture)
     {
+
         $picture_main = Carbon::now()->timestamp. '.' . $request->file('picture_main')->getClientOriginalExtension();
         $request->file('picture_main')->storeAs('picture_main',$picture_main);
         if ($request['picture_deactive'] != null){
