@@ -26,12 +26,13 @@
                         <td>Email@example.com</td>
                         <td>
                             <button type="submit" class="btn btn-success">
-                                {{ __('edit') }}
+                                <a href="">{{ __('edit') }}</a>
                             </button>
+
                         </td>
                         <td>
                             <button type="submit" class="btn btn-danger">
-                                {{ __('delete') }}
+                                <a href="">{{ __('delete') }}</a>
                             </button>
                         </td>
                     </tr>
