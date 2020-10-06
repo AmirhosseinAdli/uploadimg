@@ -20,10 +20,16 @@
                     <tr>
                         <td><img src="" alt="" style="width: 100px ;height: 100px;"></td>
                         <td>Slug1</td>
+                        <td>Token1</td>
+                        <td>IP1</td>
+                        <td>OPERATION</td>
                     </tr>
                     <tr>
                         <td><img src="" alt="" style="width: 100px ;height: 100px;"></td>
                         <td>Slug2</td>
+                        <td>Token2</td>
+                        <td>IP2</td>
+                        <td>OPERATION</td>
                     </tr>
                 </table>
             </div>

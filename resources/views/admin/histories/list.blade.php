@@ -7,7 +7,7 @@
 
         <div class="container text-center">
             <div class="table-responsive">
-                <table class="table table-striped table-hover" >
+                <table class="table table-striped table-hover">
                     <thead>
                     <tr>
                         <th class="w-10"><h3>Username</h3></th>
@@ -21,10 +21,18 @@
                     <tr>
                         <td>User1</td>
                         <td><img src="" alt="" style="width: 100px ;height: 100px;"></td>
+                        <td>Slug1</td>
+                        <td>Token1</td>
+                        <td>IP1</td>
+                        <td>OPERATION</td>
                     </tr>
                     <tr>
                         <td>User2</td>
                         <td><img src="" alt="" style="width: 100px ;height: 100px;"></td>
+                        <td>Slug2</td>
+                        <td>Token2</td>
+                        <td>IP2</td>
+                        <td>OPERATION</td>
                     </tr>
                 </table>
             </div>
