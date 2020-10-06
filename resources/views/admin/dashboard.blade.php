@@ -10,7 +10,6 @@
 
 @push('style')
     <style>
-
         .emp-profile{
             padding: 3%;
             margin-top: 3%;

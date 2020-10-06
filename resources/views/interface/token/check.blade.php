@@ -18,7 +18,7 @@
                 <div class="card">
                     <div class="card-header card bg-primary">{{ __('Check Of Token And Show Image') }}</div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('token.store') }}">
+                        <form method="post" action="#">
                             @csrf
 
                             <div class="form-group row">
