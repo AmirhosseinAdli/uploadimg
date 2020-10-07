@@ -218,10 +218,15 @@ svg {
   overflow: hidden;
   vertical-align: middle;
 }
-
 table {
-  border-collapse: collapse;
+    counter-reset: tableCount;
+    border-collapse: collapse;
 }
+.counterCell:before {
+    content: counter(tableCount);
+    counter-increment: tableCount;
+}
+
 
 caption {
   padding-top: 0.75rem;

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Picture extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'user_id',
         'picture_main',
@@ -23,4 +24,10 @@ class Picture extends Model
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
+
+    public function histories()
+    {
+        return $this->hasMany(History::class);
+    }
+
 }
