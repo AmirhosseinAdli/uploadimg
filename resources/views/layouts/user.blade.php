@@ -87,11 +87,10 @@
             <div class="row content">
                 <div class="col-sm-2 sidenav" style="margin-top:90px">
                     <h1>User-panel</h1>
-                    <p style="margin-top: 50px"><a href="#">Dashboard</a></p>
-                    <p><a href="#">Users</a></p>
-                    <p><a href="#">Pictures list</a></p>
-                    <p><a href="#">History</a></p>
-                    <p><a href="#" style="color: red">Logout</a></p>
+                    <p style="margin-top: 50px"><a href="{{route('panel.home')}}">Dashboard</a></p>
+                    <p><a href="{{route('panel.pictures.index')}}">Pictures list</a></p>
+                    <p><a href="{{route('panel.histories.index')}}">History</a></p>
+                    <p><a href="{{route('logout')}}"  style="color: red">Logout</a></p>
                 </div>
                 <div class="col-sm-8 text-left">
 
