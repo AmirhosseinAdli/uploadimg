@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 trait HistoryTrait
 {
-    public function upload(Picture $picture): History
+    public static function upload(Picture $picture): History
     {
         $history = DB::table('histories')->insert([
             'picture_id' => $picture->id,

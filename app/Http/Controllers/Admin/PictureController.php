@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Picture;
+use App\Traits\HistoryTrait;
 use Illuminate\Http\Request;
 
 class PictureController extends Controller
 {
+    use HistoryTrait;
 
     public function index()
     {
@@ -23,7 +25,8 @@ class PictureController extends Controller
 
     public function store(Request $request)
     {
-        //
+
+        HistoryTrait::upload($picture);
     }
 
 

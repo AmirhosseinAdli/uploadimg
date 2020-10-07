@@ -52,7 +52,7 @@ class PictureController extends Controller
 
 
         $picture = Picture::create($picture);
-        $this->upload($picture);
+        HistoryTrait::upload($picture);
         return redirect()->route('panel.pictures.index');
     }
 
