@@ -16,7 +16,7 @@ class ViewController extends Controller
 
         $data['users'] = User::count();
         $data['images'] = Picture::count();
-        $data['visitores'] = History::where('state', config('enums.histories.operations.visited'))->count();
+        $data['visitores'] = History::where('operation', config('enums.histories.operations.visited'))->count();
 
         return view('interface.homepage')->withData($data);
 

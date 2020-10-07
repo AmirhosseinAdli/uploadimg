@@ -7,6 +7,5 @@ Auth::routes();
 Route::get('logout', function () {
     auth()->logout();
     return redirect('/');
-});
+})->name('logout');
 
-Route::resource('/token','TokenController');
