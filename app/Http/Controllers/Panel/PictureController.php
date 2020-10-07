@@ -49,9 +49,9 @@ class PictureController extends Controller
 
 
 
-    public function show(Picture $picture)
+    public function test(Picture $picture)
     {
-            dd($picture->expire_time);
+        //
     }
 
 
@@ -63,7 +63,8 @@ class PictureController extends Controller
 
     public function update(Request $request, Picture $picture)
     {
-        dd($request->toArray());
+//        $request->validate()
+//        dd($request->toArray());
 
 //        $picture_main = Carbon::now()->timestamp. '.' . $request->file('picture_main')->getClientOriginalExtension();
 //        $request->file('picture_main')->storeAs('picture_main',$picture_main);
@@ -100,7 +101,7 @@ class PictureController extends Controller
         }
 
         $picture->save();
-        return redirect('panel/pictures');
+        return redirect()->route('panel.pictures.index');
     }
 
 
