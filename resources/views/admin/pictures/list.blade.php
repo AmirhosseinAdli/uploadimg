@@ -32,9 +32,9 @@
                     <td>{{$picture->expire_time}}</td>
                     <td>
                         <div class="container d-inline-flex">
-                            <a href="<!-- history route -->" class="btn btn-secondary btn-block">History</a>
-                            <a href="<!-- edit route -->" class="btn btn-primary btn-block">Edit</a>
-                            <form action="<!-- expire route -->" method="post" class="col-5">
+                            <a href="{{route('admin.histories.index')}}" class="btn btn-secondary btn-block">History</a>
+                            <a href="{{route('admin.pictures.edit',[$picture])}}" class="btn btn-primary btn-block">Edit</a>
+                            <form action="{{route('admin.pictures.expire',[$picture])}}" method="post" class="col-5">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-block active">expire</button >
