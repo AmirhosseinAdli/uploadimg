@@ -33,7 +33,7 @@ class PictureController extends Controller
 
     public function store(Request $request)
     {
-          $picture_main = Carbon::now()->timestamp. '.' . $request->file('picture_main')->getClientOriginalExtension();
+        $picture_main = Carbon::now()->timestamp. '.' . $request->file('picture_main')->getClientOriginalExtension();
         $request->file('picture_main')->storeAs('picture_main',$picture_main);
         if ($request['picture_deactive'] != null){
             $picture_deactive = Carbon::now()->timestamp. '.' . $request->file('picture_deactive')->getClientOriginalExtension();
@@ -42,13 +42,14 @@ class PictureController extends Controller
 
         $picture = $request->all();
         $picture['picture_main'] = 'picture_main/' . $picture_main;
+        $picture['user_id'] = auth()->user()->id;
         if ($request['picture_deactive'] != null) {
             $picture['picture_deactive'] = 'picture_deactive/' . $picture_deactive;
         }
 
 
-            Picture::create($picture);
-            return redirect()->route('panel.pictures.index');
+        Picture::create($picture);
+        return redirect()->route('panel.pictures.index');
     }
 
 
