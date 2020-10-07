@@ -3,7 +3,7 @@
 @section('content')
 
     <h3 class="container">Picture List</h3>
-    <a class="container" href="#">Upload new picture</a>
+    <a class="container" href="{{route('panel.pictures.create')}}">Upload new picture</a>
 
     <table class="table">
         <thead>
@@ -18,10 +18,11 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($pictures  as $picture)
+{{--        @for($i=1;$i<=$num;$i++)--}}
+            @foreach($pictures  as $picture)
 
             <tr>
-                <th scope="row">{{$picture->id}}</th>
+                <th class="counterCell" scope="row"> </th>
                 <td>{{$picture->token}}</td>
                 <td>{{$picture->slug}}</td>
                 <td>{{$picture->updated_at}}</td>
@@ -29,7 +30,10 @@
                 <td><div class="container d-inline-flex">
                         <a href="{{route('panel.pictures.edit',[$picture])}}" class="btn btn-primary btn-sm active"  >Edit</a>
 
-                        <a href="#" class="btn btn-success btn-sm active"  >Expire</a>
+                        <form action="{{route('panel.pictures.test',[$picture])}}" method="post">
+                            @csrf
+                            <button type="submit"  class="btn btn-success btn-sm active"   > Expire</button >
+                        </form>
 
                         <form action="{{route('panel.pictures.destroy',[$picture])}}" method="post">
                             @csrf
@@ -44,9 +48,10 @@
                 </td>
             </tr>
         @endforeach
+{{--        @endfor--}}
         </tbody>
     </table>
 
-        <img style="width: 50px;height: 50px" src="{{asset($picture->picture_main)}}" >
-        <img style="width: 50px;height: 50px" src="{{asset($picture->picture_deactive)}}" >
+{{--        <img style="width: 50px;height: 50px" src="{{asset($picture->picture_main)}}" >--}}
+{{--        <img style="width: 50px;height: 50px" src="{{asset($picture->picture_deactive)}}" >--}}
 @endsection

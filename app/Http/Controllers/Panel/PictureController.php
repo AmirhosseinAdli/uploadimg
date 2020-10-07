@@ -14,7 +14,12 @@ class PictureController extends Controller
     public function index()
     {
         $pictures = Picture::all();
-        return view('panel.pictures.list',compact('pictures'));
+        $num=0;
+        foreach ($pictures as $key =>$value)
+        {
+            $num++;
+        }
+        return view('panel.pictures.list',compact('pictures','num'));
     }
 
 
@@ -51,7 +56,9 @@ class PictureController extends Controller
 
     public function test(Picture $picture)
     {
-        //
+        $picture->expire_time = Carbon::now()->toDateTimeString();;
+        $picture->save();
+        return redirect()->route('panel.pictures.index');
     }
 
 
@@ -107,6 +114,7 @@ class PictureController extends Controller
 
     public function destroy(Picture $picture)
     {
+
         $picture->Delete();
         return redirect()->route('panel.pictures.index');
     }
