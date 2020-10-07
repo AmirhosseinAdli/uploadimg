@@ -17,7 +17,5 @@ class History extends Model
         'title',
     ];
 
-    public function picture(){
-        return $this->belongsTo(Picture::class);
-    }
+
 }
