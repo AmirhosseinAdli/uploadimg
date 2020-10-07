@@ -7,7 +7,6 @@ Route::get('/home/upload_now',function (){
     return view('panel.dashboard');
 })->name('home.upload_now');
 
-Route::resource('/token','TokenController');
 
 Route::get('/','ViewController@homepage')->name('homepage');
 Route::get('/{slug}','ViewController@view')->name('view');

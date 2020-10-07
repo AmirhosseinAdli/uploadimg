@@ -24,13 +24,12 @@ class ViewController extends Controller
 
     public function view()
     {
-
+        return 'Not implemented yet | ViewController @ view';
     }
 
     //Checks token validation
     public function check()
     {
-
+        return view('interface.token.check');
     }
-
 }

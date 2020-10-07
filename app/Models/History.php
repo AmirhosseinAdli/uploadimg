@@ -17,4 +17,12 @@ class History extends Model
         'operation',
     ];
 
+    public function picture(){
+        return $this->belongsTo(Picture::class);
+    }
+
+    public function user(){
+        return $this->picture->user;
+    }
+
 }
