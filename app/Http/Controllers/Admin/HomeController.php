@@ -27,13 +27,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $users = User::count();
-        $histories = History::count();
-        $total_images = Picture::count();
-        $active_images = count(Picture::where('state', 'active')->get());
+        $data = [];
+        $data['Total Images'] = Picture::count();
+        $data['Active Images'] = count(Picture::where('state', 'active')->get());
+        $data['Users'] = User::count();
+        $data['Histories'] = History::count();
 
-        return view('admin.dashboard',
-            compact('users', 'histories', 'total_images', 'active_images'));
+        return view('admin.dashboard', compact('data'));
     }
 
 }

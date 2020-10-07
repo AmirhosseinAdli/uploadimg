@@ -24,4 +24,10 @@ class Picture extends Model
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
+
+    public function histories()
+    {
+        return $this->hasMany(History::class);
+    }
+
 }
