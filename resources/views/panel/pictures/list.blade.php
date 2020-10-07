@@ -27,7 +27,7 @@
                 <th class="counterCell" scope="row"> </th>
                 <td>{{$picture->token}}</td>
                 <td>{{$picture->slug}}</td>
-                <td>{{$picture->updated_at}}</td>
+                <td>{{$picture->created_at}}</td>
                 <td>{{$picture->expire_time}}</td>
                 <td><div class="container d-inline-flex">
                         <a href="{{route('panel.pictures.edit',[$picture])}}" class="btn btn-primary btn-sm active"  >Edit</a>
