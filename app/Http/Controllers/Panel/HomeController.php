@@ -22,7 +22,10 @@ class HomeController extends Controller
             ->where('state','=','active')
             ->where('user_id','=',auth()->id());
 
-        $history = DB::table('histories')->distinct()->count('picture_id');
+        $history = DB::table('histories')->distinct()
+            ->join("pictures",'picture_id','=','id')
+            ->where('user_id','=',auth()->id())
+            ->count('picture_id');
 
         return view('panel.dashboard',compact('total_image','active_image','history'));
     }

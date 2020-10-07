@@ -1,9 +1,14 @@
 @extends('layouts.admin')
 
+@section('part name')
+    <h1 class="d-flex justify-content-center mb-5">Picture List </h1>
+@endsection
+
 @section('content')
+
     <div class="container">
-        <h3 class="container">Picture List</h3>
-        <a class="container" href="{{route('admin.pictures.create')}}">+ Upload new picture</a>
+        {{--<h3 class="container">Picture List</h3>--}}
+        <a class="container" href="#">+ Upload new picture</a>
         <table class="table table-striped">
             <thead>
             <tr class="container">

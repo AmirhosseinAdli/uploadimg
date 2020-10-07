@@ -1,11 +1,16 @@
 @extends('layouts.admin')
 
+
+@section('part name')
+    <h1 class="d-flex justify-content-center mb-5">Edit Picture</h1>
+@endsection
+
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-5">
-                <h2>Upload New Picture</h2>
-                <form action="{{route('admin.pictures.update',$picture)}}">
+                {{--<h2>Upload New Picture</h2>--}}
+                <form action="">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Expire Date</span>

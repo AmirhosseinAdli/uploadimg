@@ -1,8 +1,10 @@
-@extends('layouts.panel')
-
+@extends('layouts.user')
+@section('part name')
+    <h1 class="d-flex justify-content-center mb-5">List Picture</h1>
+@endsection
 @section('content')
 
-    <h3 class="container">Picture List</h3>
+    {{--<h3 class="container">Picture List</h3>--}}
     <a class="container" href="{{route('panel.pictures.create')}}">Upload new picture</a>
 
     <table class="table">
@@ -25,7 +27,7 @@
                 <th class="counterCell" scope="row"> </th>
                 <td>{{$picture->token}}</td>
                 <td>{{$picture->slug}}</td>
-                <td>{{$picture->updated_at}}</td>
+                <td>{{$picture->created_at}}</td>
                 <td>{{$picture->expire_time}}</td>
                 <td><div class="container d-inline-flex">
                         <a href="{{route('panel.pictures.edit',[$picture])}}" class="btn btn-primary btn-sm active"  >Edit</a>

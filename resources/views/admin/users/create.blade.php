@@ -1,5 +1,10 @@
 @extends('layouts.admin')
 
+
+@section('part name')
+    <h1 class="d-flex justify-content-center mb-5">Create User</h1>
+@endsection
+
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -8,7 +13,7 @@
                     <div class="card-header bg-primary">{{ __('Create NewUser') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}">
+                        <form method="POST" action="{{ route('admin.users.store') }}">
                             @csrf
 
                             <div class="form-group row">

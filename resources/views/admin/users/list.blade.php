@@ -1,12 +1,18 @@
 @extends('layouts.admin')
 
+
+@section('part name')
+    <h1 class="d-flex justify-content-center mb-5">List User</h1>
+@endsection
+
+
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="col-md-8 mb-3">{{ __('Users List') }}</div>
                 <div class="col-md-8 mb-3">
-                    <a href="{{ route('admin.users.create') }}">Create New User</a>
+                    <a class="btn btn-primary" href="{{ route('admin.users.create') }}">+ Create New User</a>
                 </div>
 
                 <table class="table">
@@ -26,17 +32,19 @@
                                 {{$user->pictures()->count()}}
                             </td>
                             <td>{{$user->email}}</td>
-                            <td>
+                            <td class="row">
                                 <a class="btn btn-success"
                                    href="{{ route('admin.users.edit',['user'=>$user->id]) }}">{{ __('Edit') }}</a>
 
                                 <a class="btn btn-success"
                                    href="{{ route('panel.pictures.index',['user'=>$user->id]) }}">{{ __('Pictures') }}</a>
-
-                                <button type="submit" class="btn btn-danger">
-                                    {{ __('Delete') }}
-                                </button>
-
+                                <form action="{{ route('admin.users.destroy',['user'=>$user->id]) }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-danger">
+                                        {{ __('Delete') }}
+                                    </button>
+                                </form>
                                 <a href="{{route('admin.users.show', [$user])}}" class="btn btn-success">History</a>
                             </td>
                         </tr>
