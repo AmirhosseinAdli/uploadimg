@@ -6,11 +6,7 @@
             <div class="col-md-8">
                 <div class="col-md-8 mb-3">{{ __('Users List') }}</div>
                 <div class="col-md-8 mb-3">
-                    <<<<<<< HEAD
-                    <a href="#">Create NewUser</a>
-                    =======
-                    <a href="{{ route('admin.users.create') }}">Create New User</a>
-                    >>>>>>> origin/add-admin-UserController
+                    <a class="btn btn-primary" href="{{ route('admin.users.create') }}">Create New User</a>
                 </div>
 
                 <table class="table">
@@ -47,7 +43,6 @@
                             </td>
                         </tr>
                     @endforeach
-                    >>>>>>> origin/add-admin-UserController
                     </tbody>
                 </table>
             </div>
