@@ -17,26 +17,26 @@
             </thead>
 
             <tbody>
-            @foreach($pictures as $picture)
+{{--            @foreach($pictures as $picture)--}}
 
-                <tr>
-                    <td>{{$picture->token}}</td>
-                    <td>{{$picture->slug}}</td>
-                    <td>{{$picture->updated_at}}</td>
-                    <td>{{$picture->expire_time}}</td>
-                    <td>
-                        <div class="container d-inline-flex">
-                            <a href="<!-- history route -->" class="btn btn-secondary btn-block">History</a>
-                            <a href="<!-- edit route -->" class="btn btn-primary btn-block">Edit</a>
-                            <form action="<!-- expire route -->" method="post" class="col-5">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-block active">expire</button >
-                            </form>
-                        </div>
-                    </td>
-                </tr>
-            @endforeach
+{{--                <tr>--}}
+{{--                    <td>{{$picture->token}}</td>--}}
+{{--                    <td>{{$picture->slug}}</td>--}}
+{{--                    <td>{{$picture->updated_at}}</td>--}}
+{{--                    <td>{{$picture->expire_time}}</td>--}}
+{{--                    <td>--}}
+{{--                        <div class="container d-inline-flex">--}}
+{{--                            <a href="<!-- history route -->" class="btn btn-secondary btn-block">History</a>--}}
+{{--                            <a href="<!-- edit route -->" class="btn btn-primary btn-block">Edit</a>--}}
+{{--                            <form action="<!-- expire route -->" method="post" class="col-5">--}}
+{{--                                @csrf--}}
+{{--                                @method('DELETE')--}}
+{{--                                <button type="submit" class="btn btn-danger btn-block active">expire</button >--}}
+{{--                            </form>--}}
+{{--                        </div>--}}
+{{--                    </td>--}}
+{{--                </tr>--}}
+{{--            @endforeach--}}
             </tbody>
         </table>
     </div>
