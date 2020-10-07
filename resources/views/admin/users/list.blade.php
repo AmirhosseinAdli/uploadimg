@@ -6,7 +6,7 @@
             <div class="col-md-8">
                 <div class="col-md-8 mb-3">{{ __('Users List') }}</div>
                 <div class="col-md-8 mb-3">
-                    <a href="{{ route('admin.add-users') }}">Create NewUser</a>
+                    <a href="#">Create NewUser</a>
                 </div>
 
                 <table class="table">
@@ -21,17 +21,18 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td>Ali</td>
-                        <td>2</td>
-                        <td>ali@example.com</td>
+                        <td>Name</td>
+                        <td>ImageCont</td>
+                        <td>Email@example.com</td>
                         <td>
                             <button type="submit" class="btn btn-success">
-                                {{ __('edit') }}
+                                <a href="">{{ __('edit') }}</a>
                             </button>
+
                         </td>
                         <td>
                             <button type="submit" class="btn btn-danger">
-                                {{ __('delete') }}
+                                <a href="">{{ __('delete') }}</a>
                             </button>
                         </td>
                     </tr>
