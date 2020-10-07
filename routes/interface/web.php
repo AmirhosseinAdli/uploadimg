@@ -11,5 +11,5 @@ Route::get('logout', function () {
 });
 
 Route::get('/','ViewController@homepage')->name('homepage');
-Route::get('/{slug}','ViewController@view')->name('view');
+Route::get('/{picture:slug}','ViewController@view')->name('view');
 Route::post('/validate','ViewController@check')->name('check');
