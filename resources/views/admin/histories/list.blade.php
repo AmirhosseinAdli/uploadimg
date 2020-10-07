@@ -2,7 +2,7 @@
 
 
 @section('part name')
-    <h1 class="d-flex justify-content-center mb-5">{{$user->name}} History</h1>
+    <h1 class="d-flex justify-content-center mb-5">All History</h1>
 @endsection
 
 @section('content')
