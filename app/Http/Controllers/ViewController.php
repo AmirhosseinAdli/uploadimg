@@ -11,20 +11,25 @@ use Illuminate\Support\Facades\DB;
 class ViewController extends Controller
 {
 
-    public function homepage(){
-        $data['users'] = User::all()->count();
-        $data['images'] = Picture::all()->count();
-        $data['visitores'] = DB::table('histories')->distinct()->count('visitor_ip');
-        return view('interface.homepage',compact('data'));
+    public function homepage()
+    {
+
+        $data['users'] = User::count();
+        $data['images'] = Picture::count();
+        $data['visitores'] = History::where('state', config('enums.histories.operations.visited'))->count();
+
+        return view('interface.homepage')->withData($data);
 
     }
 
-    public function view(){
+    public function view()
+    {
 
     }
 
     //Checks token validation
-    public function check(){
+    public function check()
+    {
 
     }
 

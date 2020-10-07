@@ -3,13 +3,6 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Auth::routes();
-
-Route::get('logout', function () {
-    auth()->logout();
-    return redirect('/');
-});
-
 Route::get('/home/upload_now',function (){
     return view('panel.dashboard');
 })->name('home.upload_now');
