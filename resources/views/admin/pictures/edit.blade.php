@@ -1,34 +1,39 @@
 @extends('layouts.admin')
 
+
+@section('part name')
+    <h1 class="d-flex justify-content-center mb-5">Edit Picture</h1>
+@endsection
+
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-5">
-                <h2>Upload New Picture</h2>
+                {{--<h2>Upload New Picture</h2>--}}
                 <form action="">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Expire Date</span>
                         </div>
-                        <input type="date" name="data" class="form-control" aria-label="Expire Date" aria-describedby="inputGroup-sizing-lg">
+                        <input type="date" name="date" class="form-control" aria-label="Expire Date" aria-describedby="inputGroup-sizing-lg">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-sm">max views</span>
                         </div>
-                        <input type="number" name="maxView" class="form-control" aria-label="max views" aria-describedby="inputGroup-sizing-sm">
+                        <input type="number" name="maxView" class="form-control" aria-label="max views" value="{{$picture->max_count}}" aria-describedby="inputGroup-sizing-sm">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Token</span>
                         </div>
-                        <input type="text" name="token" class="form-control" aria-label="Token" aria-describedby="inputGroup-sizing-sm" disabled placeholder="">
+                        <input type="text" name="token" value="{{$token}}" class="form-control" aria-label="Token" value="{{$picture->token}} aria-describedby="inputGroup-sizing-sm" disabled placeholder="">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Slug</span>
                         </div>
-                        <input type="text" name="slug" class="form-control" aria-label="Slug" aria-describedby="inputGroup-sizing-sm" disabled placeholder="">
+                        <input type="text" name="slug" value="{{$slug}}" class="form-control" aria-label="Slug" value="{{$picture->slug}}" aria-describedby="inputGroup-sizing-sm" disabled placeholder="">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">

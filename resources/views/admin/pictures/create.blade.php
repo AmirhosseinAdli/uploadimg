@@ -1,10 +1,16 @@
 @extends('layouts.admin')
 
+
+@section('part name')
+  <h1 class="d-flex justify-content-center mb-5">Upload Picture</h1>
+@endsection
+
+
 @section('content')
     <div class="container">
       <div class="row">
         <div class="col-md-5">
-          <h2>Edit Picture</h2>
+          {{--<h2>Edit Picture</h2>--}}
             <form action="">
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -22,13 +28,13 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroup-sizing-sm">Token</span>
                 </div>
-                <input type="text" name="token" class="form-control" aria-label="Token" aria-describedby="inputGroup-sizing-sm" disabled placeholder="token will generated automaticlly">
+                <input type="text" name="token" value="{{$token}}" class="form-control" aria-label="Token" aria-describedby="inputGroup-sizing-sm" disabled placeholder="token will generated automaticlly">
               </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroup-sizing-sm">Slug</span>
                 </div>
-                <input type="text" name="slug" class="form-control" aria-label="Slug" aria-describedby="inputGroup-sizing-sm" disabled placeholder="domain will generated automaticlly">
+                <input type="text" name="slug" value="{{$slug}}" class="form-control" aria-label="Slug" aria-describedby="inputGroup-sizing-sm" disabled placeholder="domain will generated automaticlly">
               </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">

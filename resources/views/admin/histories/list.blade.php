@@ -1,9 +1,15 @@
 @extends('layouts.admin')
+
+
+@section('part name')
+    <h1 class="d-flex justify-content-center mb-5">All History</h1>
+@endsection
+
 @section('content')
 
 
     <div class="container">
-        <h1>History</h1><br><br><br>
+        {{--<h1>History</h1><br><br><br>--}}
 
         <div class="container text-center">
             <div class="table-responsive">
