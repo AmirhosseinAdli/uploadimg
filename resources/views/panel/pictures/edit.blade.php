@@ -18,26 +18,26 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-sm">max views</span>
                         </div>
-                        <input type="number" name="max_count" class="form-control" aria-label="max views" aria-describedby="inputGroup-sizing-sm">
+                        <input type="number" name="max_count" class="form-control" aria-label="max views" value="{{$picture->max_count}}" ">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Token</span>
                         </div>
-                        <input type="text" name="token" class="form-control" aria-label="Token" aria-describedby="inputGroup-sizing-sm" >
+                        <input type="text" name="token" class="form-control" aria-label="Token" value="{{$picture->token}}" >
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Slug</span>
                         </div>
-                        <input type="text" name="slug" class="form-control" aria-label="Slug" aria-describedby="inputGroup-sizing-sm" >
+                        <input type="text" name="slug" class="form-control" aria-label="Slug" value="{{$picture->slug}}" " >
                     </div>
 {{--                    <div class="input-group mb-3">--}}
 {{--                        <div class="input-group-prepend">--}}
 {{--                            <span class="input-group-text">Upload Picture</span>--}}
 {{--                        </div>--}}
 {{--                        <div class="custom-file">--}}
-{{--                            <input type="file" name="picture_main " class="custom-file-input" id="inputGroupFile01">--}}
+{{--                            <input type="file" name="picture_main" class="custom-file-input" id="inputGroupFile01">--}}
 {{--                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>--}}
 {{--                        </div>--}}
 {{--                    </div>--}}

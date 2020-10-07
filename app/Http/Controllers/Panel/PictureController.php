@@ -63,6 +63,7 @@ class PictureController extends Controller
 
     public function update(Request $request, Picture $picture)
     {
+        dd($request->toArray());
 
 //        $picture_main = Carbon::now()->timestamp. '.' . $request->file('picture_main')->getClientOriginalExtension();
 //        $request->file('picture_main')->storeAs('picture_main',$picture_main);
@@ -86,13 +87,15 @@ class PictureController extends Controller
         $picture->token=$request->token;
         $picture->slug=$request->slug;
 
-        if (isset($request->picture_main)){
-            $pic=$request->picture_main->move(public_path('storage/images'), $request->picture_main->getClientOriginalName());
+        if ($request->picture_main){
+            $pic=$request->picture_main->move(public_path('storage/images'),
+                Carbon::now()->timestamp. '.' . $request->picture_main->getClientOriginalName());
             $picture->picture_main = explode('public',$pic)[1];
         }
 
-        if (isset($request->picture_deactive)){
-            $pic2=$request->picture_deactive->move(public_path('storage/images'), $request->picture_deactive->getClientOriginalName());
+        if ($request->picture_deactive){
+            $pic2=$request->picture_deactive->move(public_path('storage/images'),
+                Carbon::now()->timestamp. '.' .$request->picture_deactive->getClientOriginalName());
             $picture->picture_deactive = explode('public',$pic2)[1];
         }
 
