@@ -12,16 +12,6 @@ use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
@@ -29,13 +19,14 @@ class HomeController extends Controller
     public function index()
     {
 
-        $data = [];
-        $data['Total Images'] = Picture::count();
-        $data['Active Images'] = count(Picture::where('state', 'active')->get());
-        $data['Users'] = User::count();
-        $data['Histories'] = History::count();
+        $data = [
+            'Total Images'  => Picture::count(),
+            'Active Images' => Picture::where('state', 'active')->count(),
+            'Users'         => User::count(),
+            'Histories'     => History::count(),
+        ];
 
-        return view('admin.dashboard', compact('data'));
+        return view('admin.dashboard')->withData($data);
     }
 
 }

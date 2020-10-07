@@ -57,11 +57,11 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::middleware('web')
                 ->namespace($this->namespace)
-                ->group(base_path('routes/interface/web.php'));
+                ->group(base_path('routes/web.php'));
 
             Route::middleware('web')
                 ->namespace($this->namespace)
-                ->group(base_path('routes/web.php'));
+                ->group(base_path('routes/interface/web.php'));
 
             if(env('APP_ENV','production') === 'local'){
                 Route::middleware('web')
