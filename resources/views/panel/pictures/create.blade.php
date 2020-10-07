@@ -5,7 +5,8 @@
       <div class="row">
         <div class="col-md-5">
           <h2>Edit Picture</h2>
-            <form action="{{route('panel.pictures.store')}}">
+            <form action="{{route('panel.pictures.store')}}" method="post">
+                @csrf
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroup-sizing-sm">Expire Date</span>

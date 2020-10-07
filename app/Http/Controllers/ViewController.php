@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 class ViewController extends Controller
 {
 
-    public function homepage(){
+    public function homepage(Request $request){
+
         return view('interface.homepage');
     }
 

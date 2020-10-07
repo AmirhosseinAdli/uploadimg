@@ -21,7 +21,7 @@ class CreateHistoriesTable extends Migration
             #TODO: Change this to enum, after config complement
 //            $table->enum('operation', array_keys(config('enums.histories.operations')))->comment('Operation Title');
             $table->string('operation', 20)->comment('Operation Title');
-            $table->timestamp('created_at');
+            $table->timestamp('created_at')->default(\Illuminate\Support\Facades\DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 

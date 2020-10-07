@@ -7,6 +7,7 @@ use App\Models\History;
 use App\Models\Picture;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -27,6 +28,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         $data = [];
         $data['Total Images'] = Picture::count();
         $data['Active Images'] = count(Picture::where('state', 'active')->get());

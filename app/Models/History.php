@@ -13,9 +13,8 @@ class History extends Model
 
     protected $fillable =[
         'picture_id',
-        'visited_ip',
-        'title',
+        'visitor_ip',
+        'operation',
     ];
-
 
 }
