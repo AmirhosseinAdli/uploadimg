@@ -1,5 +1,10 @@
 @extends('layouts.admin')
 
+
+@section('part name')
+    <h1 class="d-flex justify-content-center mb-5">Create User</h1>
+@endsection
+
 @section('content')
     <div class="container">
         <div class="row justify-content-center">

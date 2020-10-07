@@ -1,8 +1,10 @@
-@extends('layouts.panel')
-
+@extends('layouts.user')
+@section('part name')
+    <h1 class="d-flex justify-content-center mb-5">List Picture</h1>
+@endsection
 @section('content')
 
-    <h3 class="container">Picture List</h3>
+    {{--<h3 class="container">Picture List</h3>--}}
     <a class="container" href="{{route('panel.pictures.create')}}">Upload new picture</a>
 
     <table class="table">
