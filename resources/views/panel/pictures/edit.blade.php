@@ -1,11 +1,13 @@
-@extends('layouts.panel')
-
+@extends('layouts.user')
+@section('part name')
+    <h1 class="d-flex justify-content-center mb-5"> Edit Picture</h1>
+@endsection
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-5">
-                <h2>Edit Picture</h2>
-                <form method="post" action="{{route('panel.pictures.update',$picture)}}"enctype="multipart/form-data">
+                {{--<h2>Edit Picture</h2>--}}
+                <form method="post" action="{{route('panel.pictures.update',$picture)}}" enctype="multipart/form-data">
                     @method('PUT')
                     @csrf
                     <div class="input-group mb-3">

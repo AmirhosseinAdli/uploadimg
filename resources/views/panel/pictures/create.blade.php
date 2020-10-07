@@ -1,10 +1,13 @@
-@extends('layouts.panel')
+@extends('layouts.user')
+@section('part name')
+  <h1 class="d-flex justify-content-center mb-5">Upload Image</h1>
+@endsection
 
 @section('content')
     <div class="container">
       <div class="row">
         <div class="col-md-5">
-          <h2>Edit Picture</h2>
+          {{--<h2>Edit Picture</h2>--}}
             <form action="{{route('panel.pictures.store')}}">
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
