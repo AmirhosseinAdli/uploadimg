@@ -30,7 +30,7 @@
                 <td><div class="container d-inline-flex">
                         <a href="{{route('panel.pictures.edit',[$picture])}}" class="btn btn-primary btn-sm active"  >Edit</a>
 
-                        <form action="{{route('panel.pictures.test',[$picture])}}" method="post">
+                        <form action="{{route('panel.pictures.expire',[$picture])}}" method="post">
                             @csrf
                             <button type="submit"  class="btn btn-success btn-sm active"   > Expire</button >
                         </form>

@@ -54,7 +54,7 @@ class PictureController extends Controller
 
 
 
-    public function test(Picture $picture)
+    public function expire(Picture $picture)
     {
         $picture->expire_time = Carbon::now()->toDateTimeString();;
         $picture->save();
