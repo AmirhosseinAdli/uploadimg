@@ -1,43 +1,57 @@
-@extends('layouts.user')
-
+@extends('layouts.panel')
 
 @section('content')
-    <div class="container">
-        <h3 class="container">Picture List</h3>
-        <a class="container" href="#">+ Upload new picture</a>
-        <table class="table table-striped">
-            <thead>
-            <tr class="container">
-                <th scope="col">Token</th>
-                <th scope="col">Slug</th>
-                <th scope="col">Data</th>
-                <th scope="col">expire_data</th>
-                <th class="text-center" scope="col">Action</th>
+
+    <h3 class="container">Picture List</h3>
+    <a class="container" href="{{route('panel.pictures.create')}}">Upload new picture</a>
+
+    <table class="table">
+        <thead>
+
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Token</th>
+            <th scope="col">Slug</th>
+            <th scope="col">Data</th>
+            <th scope="col">expire_data</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+{{--        @for($i=1;$i<=$num;$i++)--}}
+            @foreach($pictures  as $picture)
+
+            <tr>
+                <th class="counterCell" scope="row"> </th>
+                <td>{{$picture->token}}</td>
+                <td>{{$picture->slug}}</td>
+                <td>{{$picture->updated_at}}</td>
+                <td>{{$picture->expire_time}}</td>
+                <td><div class="container d-inline-flex">
+                        <a href="{{route('panel.pictures.edit',[$picture])}}" class="btn btn-primary btn-sm active"  >Edit</a>
+
+                        <form action="{{route('panel.pictures.expire',[$picture])}}" method="post">
+                            @csrf
+                            <button type="submit"  class="btn btn-success btn-sm active"   > Expire</button >
+                        </form>
+
+                        <form action="{{route('panel.pictures.destroy',[$picture])}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit"  class="btn btn-danger btn-sm active"   > Delete</button >
+                        </form>
+
+                    </div>
+
+
+
+                </td>
             </tr>
-            </thead>
+        @endforeach
+{{--        @endfor--}}
+        </tbody>
+    </table>
 
-            <tbody>
-{{--            @foreach($pictures as $picture)--}}
-
-{{--                <tr>--}}
-{{--                    <td>{{$picture->token}}</td>--}}
-{{--                    <td>{{$picture->slug}}</td>--}}
-{{--                    <td>{{$picture->updated_at}}</td>--}}
-{{--                    <td>{{$picture->expire_time}}</td>--}}
-{{--                    <td>--}}
-{{--                        <div class="container d-inline-flex">--}}
-{{--                            <a href="<!-- history route -->" class="btn btn-secondary btn-block">History</a>--}}
-{{--                            <a href="<!-- edit route -->" class="btn btn-primary btn-block">Edit</a>--}}
-{{--                            <form action="<!-- expire route -->" method="post" class="col-5">--}}
-{{--                                @csrf--}}
-{{--                                @method('DELETE')--}}
-{{--                                <button type="submit" class="btn btn-danger btn-block active">expire</button >--}}
-{{--                            </form>--}}
-{{--                        </div>--}}
-{{--                    </td>--}}
-{{--                </tr>--}}
-{{--            @endforeach--}}
-            </tbody>
-        </table>
-    </div>
+{{--        <img style="width: 50px;height: 50px" src="{{asset($picture->picture_main)}}" >--}}
+{{--        <img style="width: 50px;height: 50px" src="{{asset($picture->picture_deactive)}}" >--}}
 @endsection

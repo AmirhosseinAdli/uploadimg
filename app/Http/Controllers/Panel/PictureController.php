@@ -13,14 +13,16 @@ class PictureController extends Controller
 
     public function index()
     {
-        //
+        $pictures = Picture::all();
+        $num=0;
+        foreach ($pictures as $key =>$value)
+        {
+            $num++;
+        }
+        return view('panel.pictures.list',compact('pictures','num'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
-     */
+
     public function create()
     {
         $token = Str::random(20);
@@ -28,12 +30,7 @@ class PictureController extends Controller
         return view('panel.pictures.create',compact('token','slug'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
-     */
+
     public function store(Request $request)
     {
           $picture_main = Carbon::now()->timestamp. '.' . $request->file('picture_main')->getClientOriginalExtension();
@@ -54,66 +51,72 @@ class PictureController extends Controller
             return redirect()->route('panel.pictures.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Picture  $picture
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Picture $picture)
-    {
 
+
+
+    public function expire(Picture $picture)
+    {
+        $picture->expire_time = Carbon::now()->toDateTimeString();;
+        $picture->save();
+        return redirect()->route('panel.pictures.index');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Picture  $picture
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
-     */
+
     public function edit(Picture $picture)
     {
-        $token = Str::random(20);
-        $slug = crc32(Carbon::now()->timestamp);
-        return view('',compact('token','slug'));
+        return view('panel.pictures.edit',compact('picture'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Picture  $picture
-     * @return \Illuminate\Http\RedirectResponse
-     */
+
     public function update(Request $request, Picture $picture)
     {
-        $picture_main = Carbon::now()->timestamp. '.' . $request->file('picture_main')->getClientOriginalExtension();
-        $request->file('picture_main')->storeAs('picture_main',$picture_main);
-        if ($request['picture_deactive'] != null){
-            $picture_deactive = Carbon::now()->timestamp. '.' . $request->file('picture_deactive')->getClientOriginalExtension();
-            $request->file('picture_deactive')->storeAs('picture_deactive',$picture_deactive);
+//        $request->validate()
+//        dd($request->toArray());
+
+//        $picture_main = Carbon::now()->timestamp. '.' . $request->file('picture_main')->getClientOriginalExtension();
+//        $request->file('picture_main')->storeAs('picture_main',$picture_main);
+//        if ($request['picture_deactive'] != null){
+//            $picture_deactive = Carbon::now()->timestamp. '.' . $request->file('picture_deactive')->getClientOriginalExtension();
+//            $request->file('picture_deactive')->storeAs('picture_deactive',$picture_deactive);
+//        }
+//
+//        $picture = $request->all();
+//        $picture['picture_main'] = 'picture_main/' . $picture_main;
+//        if ($request['picture_deactive'] != null) {
+//            $picture['picture_deactive'] = 'picture_deactive/' . $picture_deactive;
+//        }
+//
+//
+//        Picture::update($picture);
+//        return redirect()->route('panel.pictures.index');
+
+        $picture->updated_at=$request->expire_time;
+        $picture->max_count=$request->max_count;
+        $picture->token=$request->token;
+        $picture->slug=$request->slug;
+
+        if ($request->picture_main){
+            $pic=$request->picture_main->move(public_path('storage/images'),
+                Carbon::now()->timestamp. '.' . $request->picture_main->getClientOriginalName());
+            $picture->picture_main = explode('public',$pic)[1];
         }
 
-        $picture = $request->all();
-        $picture['picture_main'] = 'picture_main/' . $picture_main;
-        if ($request['picture_deactive'] != null) {
-            $picture['picture_deactive'] = 'picture_deactive/' . $picture_deactive;
+        if ($request->picture_deactive){
+            $pic2=$request->picture_deactive->move(public_path('storage/images'),
+                Carbon::now()->timestamp. '.' .$request->picture_deactive->getClientOriginalName());
+            $picture->picture_deactive = explode('public',$pic2)[1];
         }
 
-
-        Picture::update($picture);
+        $picture->save();
         return redirect()->route('panel.pictures.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Picture  $picture
-     * @return \Illuminate\Http\RedirectResponse
-     */
+
     public function destroy(Picture $picture)
     {
-        $picture->softDelete();
+
+        $picture->Delete();
         return redirect()->route('panel.pictures.index');
     }
+
 }
