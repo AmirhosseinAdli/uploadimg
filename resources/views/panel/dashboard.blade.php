@@ -1,8 +1,5 @@
 @extends('layouts.user')
 
-
-
-
 @section('lang',str_replace('_', '-', app()->getLocale()) )
 
 

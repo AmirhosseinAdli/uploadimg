@@ -1,8 +1,6 @@
 @extends('layouts.admin')
 
 
-
-
 @section('lang',str_replace('_', '-', app()->getLocale()) )
 
 
@@ -10,7 +8,7 @@
 
 @push('style')
     <style>
-        .emp-profile{
+        .emp-profile {
             padding: 3%;
             margin-top: 3%;
             margin-bottom: 3%;
@@ -20,11 +18,18 @@
     </style>
 @endpush
 
+@section('part name')
+    <h1 class="d-flex justify-content-center mb-5">Dashboard</h1>
+@endsection
 
 @section('content')
 
-Dashboard-admin-panel
-
-
-
+    <div class="row mt-5">
+        @foreach($data as $title => $value)
+            <div class="mx-5">
+                <h2 class=" d-flex justify-content-center ">{{$title}}</h2>
+                <h3 class=" d-flex justify-content-center ">{{$value}}</h3>
+            </div>
+        @endforeach
+    </div>
 @endsection

@@ -95,10 +95,7 @@
                     </div>
                     <div class="col-sm-8 text-left">
 
-                        <h1 style="text-align: center">part name </h1>
-
-
-
+                        <h1 style="text-align: center">@yield('part name')</h1>
 
                         <div class="container emp-profile">
 
