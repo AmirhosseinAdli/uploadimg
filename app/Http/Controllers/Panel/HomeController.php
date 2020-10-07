@@ -26,4 +26,5 @@ class HomeController extends Controller
 
         return view('panel.dashboard',compact('total_image','active_image','history'));
     }
+
 }
