@@ -6,7 +6,11 @@
             <div class="col-md-8">
                 <div class="col-md-8 mb-3">{{ __('Users List') }}</div>
                 <div class="col-md-8 mb-3">
+                    <<<<<<< HEAD
                     <a href="#">Create NewUser</a>
+                    =======
+                    <a href="{{ route('admin.users.create') }}">Create New User</a>
+                    >>>>>>> origin/add-admin-UserController
                 </div>
 
                 <table class="table">
@@ -20,22 +24,30 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>Name</td>
-                        <td>ImageCont</td>
-                        <td>Email@example.com</td>
-                        <td>
-                            <button type="submit" class="btn btn-success">
-                                <a href="">{{ __('edit') }}</a>
-                            </button>
 
-                        </td>
-                        <td>
-                            <button type="submit" class="btn btn-danger">
-                                <a href="">{{ __('delete') }}</a>
-                            </button>
-                        </td>
-                    </tr>
+                    @foreach($users as $user)
+                        <tr>
+                            <td>{{$user->name}}</td>
+                            <td>
+                                {{$user->pictures()->count()}}
+                            </td>
+                            <td>{{$user->email}}</td>
+                            <td>
+                                <a class="btn btn-success"
+                                   href="{{ route('admin.users.edit',['user'=>$user->id]) }}">{{ __('Edit') }}</a>
+                            </td>
+                            <td>
+                                <a class="btn btn-success"
+                                   href="{{ route('panel.pictures.index',['user'=>$user->id]) }}">{{ __('Pictures') }}</a>
+                            </td>
+                            <td>
+                                <button type="submit" class="btn btn-danger">
+                                    {{ __('Delete') }}
+                                </button>
+                            </td>
+                        </tr>
+                    @endforeach
+                    >>>>>>> origin/add-admin-UserController
                     </tbody>
                 </table>
             </div>
