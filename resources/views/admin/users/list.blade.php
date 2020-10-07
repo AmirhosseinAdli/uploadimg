@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="col-md-8 mb-3">{{ __('Users List') }}</div>
                 <div class="col-md-8 mb-3">
-                    <a href="{{ route('admin.users.create') }}">Create New User</a>
+                    <a class="btn btn-primary" href="{{ route('admin.users.create') }}">+ Create New User</a>
                 </div>
 
                 <table class="table">

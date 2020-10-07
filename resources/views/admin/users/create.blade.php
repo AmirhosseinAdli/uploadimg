@@ -8,7 +8,7 @@
                     <div class="card-header bg-primary">{{ __('Create NewUser') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}">
+                        <form method="POST" action="{{ route('admin.users.store') }}">
                             @csrf
 
                             <div class="form-group row">
