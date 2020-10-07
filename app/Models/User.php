@@ -46,4 +46,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Picture::class);
     }
+
+    public function histories()
+    {
+        return $this->hasManyThrough(History::class,Picture::class);
+    }
 }

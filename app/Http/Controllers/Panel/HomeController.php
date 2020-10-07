@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Panel;
 
 use App\Http\Controllers\Controller;
+use App\Models\History;
 use App\Models\Picture;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -16,18 +19,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $total_image = Picture::all()->count();
+        $total_image = auth()->user()->pictures()->count();
 
-        $active_image = Picture::all()
-            ->where('state','=','active')
-            ->where('user_id','=',auth()->id());
+        $active_image = auth()->user()->pictures()->where('state','active')->count();
 
-        $history = DB::table('histories')->distinct()
-            ->join("pictures",'picture_id','=','id')
-            ->where('user_id','=',auth()->id())
-            ->count('picture_id');
+        $history = auth()->user()->histories()->count();
 
-        return view('panel.dashboard',compact('total_image','active_image','history'));
+        $data = [
+            'history' => $history ?? null,
+            'active_image' => $active_image,
+            'total_image' => $total_image,
+        ];
+
+        return view('panel.dashboard')->withData($data);
     }
 
 }

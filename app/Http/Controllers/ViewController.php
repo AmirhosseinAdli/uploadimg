@@ -14,7 +14,7 @@ class ViewController extends Controller
     public function homepage(){
         $data['users'] = User::all()->count();
         $data['images'] = Picture::all()->count();
-        $data['visitores'] = DB::table('histories')->distinct()->count('visited_ip');
+        $data['visitores'] = DB::table('histories')->distinct()->count('visitor_ip');
         return view('interface.homepage',compact('data'));
 
     }
