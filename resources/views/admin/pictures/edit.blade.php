@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-5">
                 <h2>Upload New Picture</h2>
-                <form action="{{route('admin.pictures.update')}}">
+                <form action="{{route('admin.pictures.update',$picture)}}">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Expire Date</span>
@@ -16,19 +16,19 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-sm">max views</span>
                         </div>
-                        <input type="number" name="maxView" class="form-control" aria-label="max views" aria-describedby="inputGroup-sizing-sm">
+                        <input type="number" name="maxView" class="form-control" aria-label="max views" value="{{$picture->max_count}}" aria-describedby="inputGroup-sizing-sm">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Token</span>
                         </div>
-                        <input type="text" name="token" value="{{$token}}" class="form-control" aria-label="Token" aria-describedby="inputGroup-sizing-sm" disabled placeholder="">
+                        <input type="text" name="token" value="{{$token}}" class="form-control" aria-label="Token" value="{{$picture->token}} aria-describedby="inputGroup-sizing-sm" disabled placeholder="">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Slug</span>
                         </div>
-                        <input type="text" name="slug" value="{{$slug}}" class="form-control" aria-label="Slug" aria-describedby="inputGroup-sizing-sm" disabled placeholder="">
+                        <input type="text" name="slug" value="{{$slug}}" class="form-control" aria-label="Slug" value="{{$picture->slug}}" aria-describedby="inputGroup-sizing-sm" disabled placeholder="">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">

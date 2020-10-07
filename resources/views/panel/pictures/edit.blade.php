@@ -18,7 +18,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-sm">max views</span>
                         </div>
-                        <input type="number" name="max_count" class="form-control" aria-label="max views" value="{{$picture->max_count}}" ">
+                        <input type="number" name="max_count" class="form-control" aria-label="max views" value="{{$picture->max_count}}" >
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -30,7 +30,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Slug</span>
                         </div>
-                        <input type="text" name="slug" class="form-control" aria-label="Slug" value="{{$picture->slug}}" " >
+                        <input type="text" name="slug" class="form-control" aria-label="Slug" value="{{$picture->slug}}"  >
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
