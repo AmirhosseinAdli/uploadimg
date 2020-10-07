@@ -88,10 +88,10 @@
                     <div class="col-sm-2 sidenav" style="margin-top:90px">
                         <h1>Admin-panel</h1>
                         <p style="margin-top: 50px"><a href="{{route('admin.home')}}">Dashboard</a></p>
-                        <p><a href="#">Users</a></p>
-                        <p><a href="#">Pictures list</a></p>
+                        <p><a href="{{route('admin.users.index')}}">Users</a></p>
+                        <p><a href="{{route('admin.pictures.index')}}">Pictures list</a></p>
                         <p><a href="{{route('admin.histories.index')}}">History</a></p>
-                        <p><a href="#" style="color: red">Logout</a></p>
+                        <p><a href="{{route('logout')}}" style="color: red">Logout</a></p>
                     </div>
                     <div class="col-sm-8 text-left">
 

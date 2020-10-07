@@ -29,7 +29,7 @@ class PictureController extends Controller
 
     public function show(Picture $picture)
     {
-        //
+        return view('admin.pictures.show', compact('picture'));
     }
 
 
