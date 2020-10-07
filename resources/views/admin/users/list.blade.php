@@ -26,17 +26,19 @@
                                 {{$user->pictures()->count()}}
                             </td>
                             <td>{{$user->email}}</td>
-                            <td>
+                            <td class="row">
                                 <a class="btn btn-success"
                                    href="{{ route('admin.users.edit',['user'=>$user->id]) }}">{{ __('Edit') }}</a>
 
                                 <a class="btn btn-success"
                                    href="{{ route('panel.pictures.index',['user'=>$user->id]) }}">{{ __('Pictures') }}</a>
-
-                                <button type="submit" class="btn btn-danger">
-                                    {{ __('Delete') }}
-                                </button>
-
+                                <form action="{{ route('admin.users.destroy',['user'=>$user->id]) }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-danger">
+                                        {{ __('Delete') }}
+                                    </button>
+                                </form>
                                 <a href="{{route('admin.users.show', [$user])}}" class="btn btn-success">History</a>
                             </td>
                         </tr>
