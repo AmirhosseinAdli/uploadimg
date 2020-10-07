@@ -1,74 +1,61 @@
 @extends('layouts.admin')
+
 @section('content')
-
     <div class="container">
-
-                <h1>Edit Image</h1><br><br><br>
-
-
-
-
-        <div class="container text-center">
-
-
-            <div class="row">
-
-                <div style="width: 300px;height: 400px;border: black solid 1px">
-                    <img src="#" alt="not loaded yet" >
-                </div> <br><br>
-
-
-                <div class="col-lg-8">
-
-                    <form action="">
-                        change title:
-                        <input type="text"><br><br><br><br><br>
-
-
-
-
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Delete img</button> <br><br><br><br><br>
-
-                        Choose new image :
-                        <input type="file"> <br><br><br>
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="myModal" role="dialog">
-                            <div class="modal-dialog">
-
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-
-                                        <h4 class="modal-title">Why you want to remove ?</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form>
-                                            <div class="radio">
-                                                <label><input type="radio" name="optradio" checked>Unusual</label>
-                                            </div>
-                                            <div class="radio">
-                                                <label><input type="radio" name="optradio">+18</label>
-                                            </div>
-                                            <div class="radio disabled">
-                                                <label><input type="radio" name="optradio" >Other</label>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">delete</button>
-                                        <button type="button" class="btn btn-primary" data-dismiss="modal">close</button>
-                                    </div>
-                                </div>
-
-                            </div>
+        <div class="row">
+            <div class="col-md-5">
+                <h2>Upload New Picture</h2>
+                <form action="">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Expire Date</span>
                         </div>
-
-                    </form>
-                </div>
+                        <input type="date" name="data" class="form-control" aria-label="Expire Date" aria-describedby="inputGroup-sizing-lg">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">max views</span>
+                        </div>
+                        <input type="number" name="maxView" class="form-control" aria-label="max views" aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Token</span>
+                        </div>
+                        <input type="text" name="token" class="form-control" aria-label="Token" aria-describedby="inputGroup-sizing-sm" disabled placeholder="">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Slug</span>
+                        </div>
+                        <input type="text" name="slug" class="form-control" aria-label="Slug" aria-describedby="inputGroup-sizing-sm" disabled placeholder="">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Upload Picture</span>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" name="picture" class="custom-file-input" id="inputGroupFile01">
+                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Upload Holder Picture</span>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" name="holder" class="custom-file-input" id="inputGroupFile01">
+                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary w-25" type="submit">Submit</button>
+                    <button class="btn btn-dark w-50" type="submit">Delete Permanently</button>
+                </form>
             </div>
-        </div><br>
-
+            <div class="col-md-3 offset-md-4">
+                <img src="" alt="" class="img-thumbnail">
+                <img src="" alt="" class="img-thumbnail">
+            </div>
+        </div>
     </div>
-
 @endsection

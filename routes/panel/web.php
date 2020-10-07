@@ -9,3 +9,4 @@ Route::resource('/histories', 'HistoryController');
 
 
 
+

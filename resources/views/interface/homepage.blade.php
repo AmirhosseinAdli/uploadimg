@@ -1,107 +1,137 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>{{ config('app.title', 'Laravel') }}</title>
+@push('style')
+    <style>
+        html, body {
+            background-color: #fff;
+            color: #636b6f;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 200;
+            height: 100vh;
+            margin: 0;
+        }
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        .full-height {
+            height: 100vh;
+        }
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+        .flex-center {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
 
-            .full-height {
-                height: 100vh;
-            }
+        .position-ref {
+            position: relative;
+        }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+        .top-right {
+            position: absolute;
+            right: 10px;
+            top: 18px;
+        }
 
-            .position-ref {
-                position: relative;
-            }
+        .content {
+            text-align: center;
+        }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+        .title {
+            font-size: 84px;
+        }
 
-            .content {
-                text-align: center;
-            }
+        .headline {
+            font-size: 24px;
+        }
 
-            .title {
-                font-size: 84px;
-            }
+        .desc {
+            font-size: 24px;
+        }
 
-            .headline {
-                font-size: 24px;
-            }
+        .links > a {
+            color: #636b6f;
+            padding: 0 25px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
 
-            .desc {
-                font-size: 24px;
-            }
+        .m-b-md {
+            margin-bottom: 30px;
+        }
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+        footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+        }
+    </style>
+@endpush
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        @role('admin')
-                            <a href="{{ route('admin.home') }}">Admin Panel</a>
-                        @else
-                            <a href="{{ route('panel.home') }}">User Panel</a>
-                        @endrole
-                    @else
+
+
+@section('lang')
+    {{ str_replace('_', '-', app()->getLocale()) }}
+@endsection
+
+@section('title')
+    {{ config('app.title', 'Laravel') }}
+@endsection
+
+
+@section('content')
+
+    <div class="navbar-nav">
+        @if (Route::has('login'))
+            <div class="top-right links">
+                @auth
+                    @role('admin')
+                    <a href="{{ route('admin.home') }}">Admin Panel</a>
+                @else
+                    <a href="{{ route('panel.home') }}">User Panel</a>
+                    @endrole
+                   
                         <a href="{{ route('login') }}">Login</a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
                         @endif
                     @endauth
-                </div>
-            @endif
+            </div>
+        @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Image Sharing System
-                    <span class="headline m-b-md">v1.0</span>
-                    <div class="desc">professional sharing system for your photos</div>
-                </div>
 
-                <div class="links">
-                    Follow us at : <a href="https://github.com/">Github <i class="fa fa-github"></i></a>
-                </div>
+        <div class="jumbotron" style="margin-top: 60px">
+            <div class="container text-center" style="height: 400px">
+
+                <br><br><br>    <h1><b>Welcome to image sharing</b></h1><br>
+                <p style="font-size: large">Upload and share your images </p><br><br>
+
+                <button type="button" class="btn btn-info" style="width: 500px;height: 100px">
+                    <a href="" style="color: white;text-decoration: none">Start Upload</a>
+                </button>
+
             </div>
         </div>
-    </body>
-</html>
+
+
+        <footer class="container-fluid text-center">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-sm">
+                        All users in site :
+                    </div>
+                    <div class="col-sm">
+                        All images in site :
+                    </div>
+                    <div class="col-sm">
+                        Visitores per day :
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+    </div>
+
+@endsection
