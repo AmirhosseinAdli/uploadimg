@@ -90,13 +90,13 @@
                 @else
                     <a href="{{ route('panel.home') }}">User Panel</a>
                     @endrole
-                   
-                        <a href="{{ route('login') }}">Login</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+                    <a href="{{ route('login') }}">Login</a>
+
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}">Register</a>
+                    @endif
+                @endauth
             </div>
         @endif
 
@@ -104,11 +104,12 @@
         <div class="jumbotron" style="margin-top: 60px">
             <div class="container text-center" style="height: 400px">
 
-                <br><br><br>    <h1><b>Welcome to image sharing</b></h1><br>
+                <br><br><br>
+                <h1><b>Welcome to image sharing</b></h1><br>
                 <p style="font-size: large">Upload and share your images </p><br><br>
 
                 <button type="button" class="btn btn-info" style="width: 500px;height: 100px">
-                    <a href="" style="color: white;text-decoration: none">Start Upload</a>
+                    <a href="{{route('home.upload_now')}}" style="color: white;text-decoration: none">Start Upload</a>
                 </button>
 
             </div>
@@ -120,13 +121,13 @@
                 <div class="row">
 
                     <div class="col-sm">
-                        All users in site :
+                        All users in site : {{$data['users']}}
                     </div>
                     <div class="col-sm">
-                        All images in site :
+                        All images in site : {{$data['images']}}
                     </div>
                     <div class="col-sm">
-                        Visitores per day :
+                        Visitores per day : {{$data['visitores']}}
                     </div>
 
                 </div>
