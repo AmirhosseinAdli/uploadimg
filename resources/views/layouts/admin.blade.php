@@ -90,7 +90,7 @@
                         <p style="margin-top: 50px"><a href="{{route('admin.home')}}">Dashboard</a></p>
                         <p><a href="#">Users</a></p>
                         <p><a href="#">Pictures list</a></p>
-                        <p><a href="#">History</a></p>
+                        <p><a href="{{route('admin.histories.index')}}">History</a></p>
                         <p><a href="#" style="color: red">Logout</a></p>
                     </div>
                     <div class="col-sm-8 text-left">
